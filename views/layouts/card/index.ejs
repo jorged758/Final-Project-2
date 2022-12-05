@@ -1,0 +1,83 @@
+<div class="col-sm-4">
+<div class="card" style="width: 18rem">
+  <img
+    class="card-img-top"
+    src="public\images\imagesb.jfif"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title" id="name">Groceries</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+    <p class="card-text">Cad:<span id="price">500</span></p>
+    <button class="btn btn-success" id="btn_cart">AddToCart</button>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="col-sm-4">
+<div class="card" style="width: 18rem">
+  <img
+    class="card-img-top"
+    src="public\images\imagesa.jfif"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title" id="name">Groceries</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+    <p class="card-text">Cad:<span id="price">500</span></p>
+    <button class="btn btn-success" id="btn_cart">AddToCart</button>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-4">
+  <div class="card" style="width: 18rem">
+    <img
+      class="card-img-top"
+      src="public\images\images.jfif"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title" id="name">Groceries</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk of
+        the card's content.
+      </p>
+      <p class="card-text">Cad:<span id="price">500</span></p>
+      <button class="btn btn-success" id="btn_cart">AddToCart</button>
+    </div>
+  </div>
+  </div>
+<script>
+  $(`#btn_cart`).click(function () {
+    var name_value = $(`#name`).text();
+    // alert(name_value);
+    var price_value = $(`#price`).text();
+    $.ajax({
+      type: "post",
+      url: "/blog/create_cart_form",
+      // processData: false,
+      // contentType: false,
+      data: {
+        name: name_value,
+        price: price_value,
+        quantity: 1,
+      },
+      success: function (data) {
+        if (data == true) {
+          window.location.href = "/blog/list";
+        }
+      },
+      error: function (data) {
+        alert(data.responseJSON.errors);
+      },
+    });
+  });
+</script>
