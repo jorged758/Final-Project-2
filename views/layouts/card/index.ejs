@@ -1,63 +1,65 @@
 <div class="col-sm-4">
-<div class="card" style="width: 18rem">
+<div class="card" style="position:relative;">
   <img
     class="card-img-top"
     src="public\images\imagesb.jfif"
     alt="Card image cap"
   />
   <div class="card-body">
-    <h5 class="card-title" id="name">Groceries</h5>
+    <h5 class="card-title" id="name">Fresh Produce Package</h5>
     <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      Our fresh produce is sourced locally from nearby farms, pesticide-free. 
+      This package includes: Apples, Oranges, Bananas, Carrots, Onions, Garlic, Kale, Brussel Sprouts, Broccoli, Peas etc. 
     </p>
-    <p class="card-text">Cad:<span id="price">500</span></p>
-    <button class="btn btn-success" id="btn_cart">AddToCart</button>
+    <p class="card-text">CAD($): <span id="price">20.00</span></p>
+    <button class="btn btn-success" id="btn_cart">Add To Cart</button>
   </div>
 </div>
 </div>
 <br>
 <br>
 <div class="col-sm-4">
-<div class="card" style="width: 18rem">
+<div class="card" style="position:relative;">
   <img
     class="card-img-top"
-    src="public\images\imagesa.jfif"
+    src="public\images\download (2).jpg"
     alt="Card image cap"
   />
   <div class="card-body">
-    <h5 class="card-title" id="name">Groceries</h5>
+    <h5 class="card-title" id="name2">Meat and Dairy Package</h5>
     <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      Our meat and dairy products are ethically sourced from local farms and are all GMO-free. 
+      This package includes: Beef, Pork, Chicken, Salmon, Tuna, Eggs, Milk, Cheese, Yogurt, Veal, Goat, Venison, Turkey, Bull, Quail, Snake, Alligator, etc.
     </p>
-    <p class="card-text">Cad:<span id="price">500</span></p>
-    <button class="btn btn-success" id="btn_cart">AddToCart</button>
+    <p class="card-text">CAD($): <span id="price">35.50</span></p>
+    <button class="btn btn-success" id="btn_cart">Add To Cart</button>
   </div>
 </div>
 </div>
 
 <div class="col-sm-4">
-  <div class="card" style="width: 18rem">
+  <div class="card" style="position:relative;">
     <img
       class="card-img-top"
-      src="public\images\images.jfif"
+      src="public\images\wholeGrainProducts-842797430-770x533-1-650x428.jpg"
       alt="Card image cap"
     />
     <div class="card-body">
-      <h5 class="card-title" id="name">Groceries</h5>
+      <h5 class="card-title" id="name3">Wheat and Grains Package</h5>
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk of
-        the card's content.
+        Our grain products are sourced from local farms and are baked/prepared fresh everyday. 
+        This includes: Bread, Cereal, Rice, Oats, Corn, Pastas, Quinoa, Muffins, Waffles, Pancakes etc.
       </p>
-      <p class="card-text">Cad:<span id="price">500</span></p>
-      <button class="btn btn-success" id="btn_cart">AddToCart</button>
+      <p class="card-text">CAD($): <span id="price">25.00</span></p>
+      <button class="btn btn-success" id="btn_cart">Add To Cart</button>
     </div>
   </div>
   </div>
 <script>
   $(`#btn_cart`).click(function () {
     var name_value = $(`#name`).text();
+    var name2_value = $(`#name2`).text();
+    var name3_value = $(`#name3`).text();
     // alert(name_value);
     var price_value = $(`#price`).text();
     $.ajax({
@@ -67,6 +69,8 @@
       // contentType: false,
       data: {
         name: name_value,
+        name2: name2_value,
+        name3: name3_value,
         price: price_value,
         quantity: 1,
       },

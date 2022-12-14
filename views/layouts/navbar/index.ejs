@@ -14,35 +14,17 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <!-- Redirect to homepage -->
-      <a class="navbar-brand" href="/">Groceries Are Us</a>
-      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" style="color: white; font-family:'Lucida Handwriting'; font-size:30px">Groceries Are Us</a> 
+      <a class="navbar-brand" style="color: white; font-family:'Courier New'; font-size:20px" href="/">Home</a>
+      <% if(locals.token && token){ %>
+        <a class="navbar-brand" style="color: white; font-family:'Courier New'; font-size:20px" href="/blog/user_logout">Logout</a>
+        <% } else { %>
+        <a class="navbar-brand" style="color: white; font-family:'Courier New'; font-size:20px" href="/blog/user_login">Login</a>
+        <a class="navbar-brand" style="color: white; font-family:'Courier New'; font-size:20px" href="/blog/user_registration">Sign Up</a>
+         <% } %>
     </ul>
     <!-- Redirect to blog CRUD section  -->
-    <a href="/blog/list"> </a>
-    <a href="/blog/list"
-      ><button class="btn btn-outline-warning my-2 my-sm-0">
-        <i
-          
-          style="font-size: 20px; color: orange; position: relative"
-        >
-        </i
-        >
-      </button></a
-    >
-
-    <% if(locals.token && token){ %>
-    <a href="/blog/user_logout"
-      ><button class="btn btn-outline-warning my-2 my-sm-0">Logout</button></a
-    >
-    <% } else { %>
-    <a href="/blog/user_login"
-      ><button class="btn btn-outline-warning my-2 my-sm-0">Login</button></a
-    >
-    <a href="/blog/user_registration"
-      ><button class="btn btn-outline-warning my-2 my-sm-0">
-        Registration
-      </button></a
-    >
-    <% } %>
+    <a href="/blog/list"></a>
+    <a href="/blog/list"></a>
   </div>
 </nav>

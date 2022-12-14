@@ -4,17 +4,15 @@
     <div class="container mb-5">
         <div class="d-flex justify-content-between">
             <h1 style="text-align: center; margin-bottom: 30px; margin-top: 30px">
-                Blog List
+                Checkout Area
             </h1>
-            <!-- <a style="text-align: center; margin-bottom: 30px; margin-top: 40px" href="/blog/create_blog_form"><button
-                    class="btn btn-info mr-2">Add Blog</button></a> -->
         </div>
         <div class="row">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Item</th>
                         <th scope="col">Qty</th>
                         <th scope="col">Total</th>
                         <th scope="col">Action</th>
@@ -60,7 +58,7 @@
                 // get the id of the form Which gets clicked to recover the blog id to delete it from table
                 let item_id = $(this).attr(`id`);
                 // The confirmation dialog box to delete the item
-                if (confirm("Are you sure you want to delete")) {
+                if (confirm("Delete this Entry?")) {
                     $.ajax({
                         type: 'DELETE',
                         // DELETE method to delete the item and URL is defined in routes.blog to perform the deletion of blog
